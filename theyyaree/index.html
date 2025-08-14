@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Layouts Side-by-Side</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+    }
+
+    .wrapper {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .label {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .layout {
+      border: 2px solid #000;
+      padding: 5px;
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 500px;
+    }
+
+    .mobile .layout {
+      width: 250px;
+    }
+
+    .tablet .layout {
+      width: 350px;
+    }
+
+    .desktop .layout {
+      width: 500px;
+    }
+
+    .block {
+      padding: 10px;
+      text-align: center;
+      color: white;
+      font-size: 14px;
+      border: 1px solid black;
+    }
+
+    .header { background: black; }
+    .menu   { background: red; }
+    .hero   { background: blue; color: black; }
+    .main   { background: #222; }
+    .banner { background: yellow; color: black; }
+    .extra  { background: lightgreen; color: black; }
+    .image  { background: skyblue; }
+
+    /* Mobile Layout */
+    .mobile .block {
+      width: 100%;
+    }
+
+    /* Tablet Layout */
+    .tablet .header,
+    .tablet .hero {
+      width: 100%;
+    }
+
+    .tablet .menu {
+      width: 33.33%;
+    }
+
+    .tablet .main {
+      width: 66.66%;
+    }
+
+    .tablet .banner,
+    .tablet .extra,
+    .tablet .image {
+      width: 33.33%;
+    }
+
+    /* Desktop Layout */
+    .desktop .header {
+      width: 100%;
+      order: 1;
+    }
+
+    .desktop .menu {
+      width: 20%;
+      order: 2;
+    }
+
+    .desktop .hero {
+      width: 80%;
+      order: 3;
+    }
+
+    .desktop .main {
+      width: 60%;
+      order: 4;
+    }
+
+    .desktop .image {
+      width: 20%;
+      order: 5;
+    }
+
+    .desktop .extra {
+      width: 20%;
+      order: 6;
+    }
+
+    .desktop .banner {
+      width: 80%;
+      order: 7;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+
+    <!-- MOBILE layout -->
+    <div class="mobile">
+      <div class="label">MOBILE</div>
+      <div class="layout">
+        <div class="block header">HEADER</div>
+        <div class="block menu">MENU</div>
+        <div class="block menu">MENU</div>
+        <div class="block main">MAIN</div>
+        <div class="block banner">BANNER</div>
+        <div class="block extra">EXTRA</div>
+        <div class="block image">IMAGE</div>
+      </div>
+    </div>
+
+    <!-- TABLET layout -->
+    <div class="tablet">
+      <div class="label">TABLET</div>
+      <div class="layout">
+        <div class="block header">HEADER</div>
+        <div class="block hero">HERO</div>
+        <div class="block menu">MENU</div>
+        <div class="block main">MAIN</div>
+        <div class="block banner">BANNER</div>
+        <div class="block extra">EXTRA</div>
+        <div class="block image">IMAGE</div>
+      </div>
+    </div>
+
+    <!-- DESKTOP layout -->
+    <div class="desktop">
+      <div class="label">DESKTOP</div>
+      <div class="layout">
+        <div class="block header">HEADER</div>
+        <div class="block menu">MENU</div>
+        <div class="block hero">HERO</div>
+        <div class="block main">MAIN</div>
+        <div class="block image">IMAGE</div>
+        <div class="block extra">EXTRA</div>
+        <div class="block banner">BANNER</div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
